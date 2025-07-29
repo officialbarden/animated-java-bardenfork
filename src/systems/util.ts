@@ -91,6 +91,7 @@ export const unzip = (data: Uint8Array, options: AsyncUnzipOptions) => {
 	})
 }
 
+/** BARDEN: This function is commented because Cube Limitations have been removed in MC Version 1.21.6
 export function isCubeValid(cube: Cube) {
 	// Cube is automatically valid if it has no rotation
 	if (cube.rotation[0] === 0 && cube.rotation[1] === 0 && cube.rotation[2] === 0) {
@@ -119,7 +120,7 @@ export function isCubeValid(cube: Cube) {
 	}
 	return false
 }
-
+**/
 export function getFunctionNamespace(version: string): 'function' | 'functions' {
 	// If the target version is 1.21.0 or higher, use the 'function' namespace instead of 'functions'
 	return compareVersions(version, '1.20.10000') ? 'function' : 'functions'
