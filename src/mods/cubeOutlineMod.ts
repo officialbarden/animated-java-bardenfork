@@ -1,6 +1,6 @@
 import { isCurrentFormat } from '../blueprintFormat'
 import { PACKAGE } from '../constants'
-import { isCubeValid } from '../systems/util'
+// import { isCubeValid } from '../systems/util'
 import { createBlockbenchMod, createPropertySubscribable } from '../util/moddingTools'
 
 const ERROR_OUTLINE_MATERIAL = Canvas.outlineMaterial.clone()
@@ -15,7 +15,9 @@ createBlockbenchMod(
 	context => {
 		Cube.preview_controller.updateTransform = function (cube: Cube) {
 			if (isCurrentFormat()) {
-				const isValid = isCubeValid(cube)
+
+				/** Cube Rotations are now valid.
+				const isValid = TRUE // Cube is always Valid
 				if (cube.rotationInvalid && isValid) {
 					cube.mesh.outline.material = Canvas.outlineMaterial
 					cube.rotationInvalid = false
@@ -30,6 +32,7 @@ createBlockbenchMod(
 						Project!.showingInvalidCubeRotations = true
 					}
 				}
+				*/
 			}
 			context.originalUpdateTransform.call(this, cube)
 		}

@@ -807,7 +807,7 @@ dir <%export_namespace%> {
 				on passengers \
 				if entity @s[tag=<%TAGS.GLOBAL_DATA()%>] \
 			run block zzz/as_camera/as_data { {name: $(name)}
-				$data modify storage aj:temp args.uuid set from entity @s data.cameras.$(name)
+				$data modify storage aj:temp args.uuid set from entity @s data.cameras.$(name).uuid
 				scoreboard players set #aj.check <%OBJECTIVES.I()%> 0
 				block execute_as_uuid { with storage aj:temp args
 					$execute as $(uuid) at @s run $(command)
